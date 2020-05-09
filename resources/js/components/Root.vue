@@ -1,21 +1,24 @@
 <template>
     <div>
         <Header />
-        <Body />
+        <Introduction />
+        <Aboutme />
         <Footer />
     </div>
 </template>
 
 <script>
 import Header from './Header.vue'
-import Body from './Body.vue'
+import Introduction from './Introduction.vue'
+import Aboutme from './Aboutme.vue'
 import Footer from './Footer.vue'
 
     export default {
         name:'Root',
         components:{
             Header,
-            Body,
+            Introduction,
+            Aboutme,
             Footer
         }
     }

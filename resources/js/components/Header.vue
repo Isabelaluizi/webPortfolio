@@ -34,7 +34,7 @@ export default {
 }
 #style-name {
     font-family: 'Rock Salt', cursive;
-    font-size:20px;
+    font-size:18px;
 }
 </style>
 
