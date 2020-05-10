@@ -29,6 +29,8 @@
         </div>
         <script src="https://kit.fontawesome.com/23224187c2.js" crossorigin="anonymous"></script>
         <script src="//bootstrap-extension.com/js/4.5.1/bootstrap-extension.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue-scrollto"></script>
         <script src="js/app.js"></script>
     </body>
 </html>

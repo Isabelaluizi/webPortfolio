@@ -3,6 +3,8 @@
         <Header />
         <Introduction />
         <Aboutme />
+        <Myprojects />
+        <Contactme />
         <Footer />
     </div>
 </template>
@@ -11,6 +13,8 @@
 import Header from './Header.vue'
 import Introduction from './Introduction.vue'
 import Aboutme from './Aboutme.vue'
+import Myprojects from './Myprojects.vue'
+import Contactme from './Contactme.vue'
 import Footer from './Footer.vue'
 
     export default {
@@ -19,6 +23,8 @@ import Footer from './Footer.vue'
             Header,
             Introduction,
             Aboutme,
+            Myprojects,
+            Contactme,
             Footer
         }
     }

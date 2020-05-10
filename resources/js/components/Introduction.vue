@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="images/jAhePXz%SKC37JlofcrqEA_thumb_861.jpg" id="main-image" class="img-fluid">
-        <h2 id="introduction"><strong>Hi, my name is Isabela. I'm a Full Stack Web Developer living in Alberta, Canada.</strong></h2>
+        <h3 id="introduction"><strong>Hi, my name is Isabela. I'm a Full Stack Web Developer living in Alberta, Canada.</strong></h3>
     </div>
 </template>
 
@@ -13,11 +13,10 @@ export default {
 
 <style scoped>
 #main-image{
-    opacity:0.4;
+    opacity:0.2;
 }
 #introduction{
     position:absolute;
-    text-shadow: 2px 2px 8px #6c4581;
     top:15vh;
     left:5%;
     right:5%;
