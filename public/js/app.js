@@ -2381,25 +2381,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Contactme",
   data: function data() {
     return {
       name: "",
       email: "",
-      message: "Message"
+      message: "",
+      emailresponse: ""
     };
   },
   methods: {
     sendEmail: function sendEmail() {
+      var _this = this;
+
       axios.post("/sendEmail", {
         name: this.name,
         email: this.email,
         message: this.message
       }).then(function (response) {
-        console.log(response.data);
+        _this.emailresponse = response.data;
       })["catch"](function (error) {
-        console.log("Error storing data");
+        _this.emailresponse = "It was not possible to send your message. Please, make sure that you have a valid email. ";
       });
     }
   }
@@ -7229,7 +7236,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#contact-me-title[data-v-7e05b7dd] {\n  font-family: \"Fredoka One\", cursive;\n  margin-top: 5vh;\n  margin-bottom: 5vh;\n}\n.change-button-color[data-v-7e05b7dd] {\n  background-color: #c2bbff;\n  border-color: #c2bbff;\n  color: black;\n}\n#text-get-in-touch[data-v-7e05b7dd] {\n  font-family: \"Fredoka One\", cursive;\n}\n.change-button-color[data-v-7e05b7dd] {\n  background-color: #c2bbff;\n  border-color: #c2bbff;\n  color: black;\n}\n.button-submit[data-v-7e05b7dd] {\n  margin-top: 1vh;\n}\n#contact-me[data-v-7e05b7dd] {\n  margin-top: 10vh;\n}\n#message-contact-me[data-v-7e05b7dd]{\n    margin-bottom:3vh;\n}\n", ""]);
+exports.push([module.i, "\n#contact-me-title[data-v-7e05b7dd] {\n  font-family: \"Fredoka One\", cursive;\n  margin-top: 5vh;\n  margin-bottom: 5vh;\n}\n.change-button-color[data-v-7e05b7dd] {\n  background-color: #c2bbff;\n  border-color: #c2bbff;\n  color: black;\n}\n#text-get-in-touch[data-v-7e05b7dd] {\n  font-family: \"Fredoka One\", cursive;\n}\n.change-button-color[data-v-7e05b7dd] {\n  background-color: #c2bbff;\n  border-color: #c2bbff;\n  color: black;\n}\n#limit-character[data-v-7e05b7dd]{\n    color:red;\n}\n.button-submit[data-v-7e05b7dd] {\n  margin-top: 1vh;\n}\n#contact-me[data-v-7e05b7dd] {\n  margin-top: 10vh;\n}\n#message-contact-me[data-v-7e05b7dd]{\n    margin-bottom:3vh;\n}\n", ""]);
 
 // exports
 
@@ -40360,6 +40367,23 @@ var render = function() {
                 [
                   _vm._m(1),
                   _vm._v(" "),
+                  this.emailresponse != ""
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "alert alert-info",
+                          attrs: { role: "alert" }
+                        },
+                        [
+                          _vm._v(
+                            "\n              " +
+                              _vm._s(this.emailresponse) +
+                              "\n          "
+                          )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
                   _c("div", { staticClass: "input-group mb-3" }, [
                     _vm._m(2),
                     _vm._v(" "),
@@ -40431,7 +40455,7 @@ var render = function() {
                         }
                       ],
                       staticClass: "form-control",
-                      attrs: { rows: "5" },
+                      attrs: { rows: "5", maxlength: 250 },
                       domProps: { value: _vm.message },
                       on: {
                         input: function($event) {
@@ -40442,6 +40466,15 @@ var render = function() {
                         }
                       }
                     })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "text-right" }, [
+                    this.message.length >= 250
+                      ? _c("span", { attrs: { id: "limit-character" } }, [
+                          _vm._v("Character Limit Reached")
+                        ])
+                      : _vm._e(),
+                    _vm._v(_vm._s(250 - this.message.length) + " /250")
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "text-center button-submit" }, [
@@ -40706,7 +40739,7 @@ var staticRenderFns = [
                     "a",
                     {
                       staticClass: "nav-item nav-link active link-mystyle",
-                      attrs: { href: "/images/ISABELAMONTEIRO042020.pdf" }
+                      attrs: { href: "/images/IsabelaMonteiroPortfolio.pdf" }
                     },
                     [_vm._v("Resume")]
                   ),

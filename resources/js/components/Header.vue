@@ -22,7 +22,7 @@
           <a class="nav-item nav-link active link-mystyle" href="#my-projects">Projects</a>
           <a
             class="nav-item nav-link active link-mystyle"
-            href="/images/ISABELAMONTEIRO042020.pdf"
+            href="/images/IsabelaMonteiroPortfolio.pdf"
           >Resume</a>
           <a class="nav-item nav-link active link-mystyle" href="#contact-me">Contact me</a>
         </div>º

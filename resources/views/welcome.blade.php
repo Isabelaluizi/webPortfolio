@@ -3,8 +3,12 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Portfolio, Isabela, Monteiro, web, development, developer, resume, projects, contact">
+        <meta name="description" content="Isabela Monteiro's online portfolio that shares all projects, resume and ways to contact her">
+        <link rel="icon" href="images/mouse-16.ico" type="image/gif">
+        <meta name="author" content="Isabela">
 
-        <title>Laravel</title>
+        <title>Isabela Monteiro</title>
 
         <!-- Fonts -->
         <link href="/css/app.css" rel="stylesheet">

@@ -20,6 +20,9 @@
             <h5>
               <strong>Get in touch.</strong>
             </h5>
+            <div v-if="this.emailresponse!=''" class="alert alert-info" role="alert">
+                {{this.emailresponse}}
+            </div>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Name</span>
@@ -45,8 +48,9 @@
               />
             </div>
             <div class="input-group">
-              <textarea class="form-control" rows="5" v-model="message"></textarea>
+              <textarea class="form-control" rows="5" v-model="message" :maxlength="250"></textarea>
             </div>
+            <div class="text-right"><span id="limit-character" v-if="this.message.length >= 250">Character Limit Reached</span>{{ 250 - this.message.length }} /250</div>
             <div class="text-center button-submit">
               <button
                 @click="sendEmail()"
@@ -67,7 +71,8 @@ export default {
     return {
       name: "",
       email: "",
-      message: "Message"
+      message: "",
+      emailresponse:""
     };
   },
   methods: {
@@ -79,10 +84,10 @@ export default {
           message: this.message
         })
         .then(response => {
-          console.log(response.data);
+          this.emailresponse = response.data;
         })
         .catch(error => {
-          console.log("Error storing data");
+          this.emailresponse = "It was not possible to send your message. Please, make sure that you have a valid email. ";
         });
     }
   }
@@ -107,6 +112,9 @@ export default {
   background-color: #c2bbff;
   border-color: #c2bbff;
   color: black;
+}
+#limit-character{
+    color:red;
 }
 .button-submit {
   margin-top: 1vh;
