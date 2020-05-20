@@ -87,7 +87,6 @@ export default {
         })
         .then(response => {
           this.emailresponse = response.data;
-          console.log(this.emailresponse);
           if(this.emailresponse != "Please, fill out all fields."){
           this.name ='';
           this.email='';

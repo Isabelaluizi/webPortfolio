@@ -2407,7 +2407,6 @@ __webpack_require__.r(__webpack_exports__);
         message: this.message
       }).then(function (response) {
         _this.emailresponse = response.data;
-        console.log(_this.emailresponse);
 
         if (_this.emailresponse != "Please, fill out all fields.") {
           _this.name = '';
