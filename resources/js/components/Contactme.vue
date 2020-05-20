@@ -87,9 +87,18 @@ export default {
         })
         .then(response => {
           this.emailresponse = response.data;
+          console.log(this.emailresponse);
+          if(this.emailresponse != "Please, fill out all fields."){
+          this.name ='';
+          this.email='';
+          this.message=''
+          }
         })
         .catch(error => {
           this.emailresponse = "It was not possible to send your message. Please, make sure that you have a valid email. ";
+          this.name ='';
+          this.email='';
+          this.message=''
         });
     }
   }

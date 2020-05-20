@@ -2407,8 +2407,18 @@ __webpack_require__.r(__webpack_exports__);
         message: this.message
       }).then(function (response) {
         _this.emailresponse = response.data;
+        console.log(_this.emailresponse);
+
+        if (_this.emailresponse != "Please, fill out all fields.") {
+          _this.name = '';
+          _this.email = '';
+          _this.message = '';
+        }
       })["catch"](function (error) {
         _this.emailresponse = "It was not possible to send your message. Please, make sure that you have a valid email. ";
+        _this.name = '';
+        _this.email = '';
+        _this.message = '';
       });
     }
   }

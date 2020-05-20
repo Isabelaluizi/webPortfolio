@@ -10,7 +10,7 @@ class MailController extends Controller
 {
     function sendEmail (Request $request){
         if($request->name == null || $request->email ==null || $request->message ==null){
-            return response()->json("Please, fill out all fields");
+            return response()->json("Please, fill out all fields.");
         } else {
             $to_name='Isabela';
             $to_email='luizi.isabela@gmail.com';
@@ -22,6 +22,6 @@ class MailController extends Controller
                 $message->from($from_email,$from_name);
             });
         }
-        return response()->json("Message sent successfully");
+        return response()->json("Message sent successfully.");
     }
 }
