@@ -25,7 +25,7 @@
             <h5 class="card-title">Okotoks Pizza Project</h5>
             <p
               class="card-text"
-            >This is a project about a fictitinal Pizza retaurant website which was built with HTML and CSS.</p>
+            >This is a project about a fictional Pizza retaurant website which was built with HTML and CSS.</p>
           </div>
           <div class="card-body border-top text-center">
             <a

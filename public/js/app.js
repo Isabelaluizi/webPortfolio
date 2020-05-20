@@ -2385,6 +2385,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Contactme",
   data: function data() {
@@ -40400,7 +40402,8 @@ var render = function() {
                       attrs: {
                         type: "text",
                         "aria-label": "Username",
-                        "aria-describedby": "basic-addon1"
+                        "aria-describedby": "basic-addon1",
+                        maxlength: 50
                       },
                       domProps: { value: _vm.name },
                       on: {
@@ -40430,7 +40433,8 @@ var render = function() {
                       attrs: {
                         type: "text",
                         "aria-label": "Username",
-                        "aria-describedby": "basic-addon1"
+                        "aria-describedby": "basic-addon1",
+                        maxlength: 250
                       },
                       domProps: { value: _vm.email },
                       on: {
@@ -40912,7 +40916,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
                         _vm._v(
-                          "This is a project about a fictitinal Pizza retaurant website which was built with HTML and CSS."
+                          "This is a project about a fictional Pizza retaurant website which was built with HTML and CSS."
                         )
                       ])
                     ]),

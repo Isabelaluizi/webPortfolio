@@ -33,6 +33,7 @@
                 v-model="name"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                :maxlength="50"
               />
             </div>
             <div class="input-group mb-3">
@@ -45,6 +46,7 @@
                 v-model="email"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                :maxlength="250"
               />
             </div>
             <div class="input-group">
