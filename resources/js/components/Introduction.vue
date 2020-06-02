@@ -16,7 +16,7 @@ export default {
             var textWrapper = document.querySelector(".ml2");
             textWrapper.innerHTML = textWrapper.textContent.replace(
             /\S/g,
-      "<span class='letter'>$&</span>"
+      "<span class='letter invisible'>$&</span>"
     );
    anime.timeline({loop:false}).add({
       targets: ".ml2 .letter",
@@ -25,7 +25,10 @@ export default {
       translateZ: 0,
       easing: "easeOutExpo",
       duration: 950,
-      delay: (el, i) => 1000 + 60 * i
+      delay: (el, i) => 1000 + 60 * i,
+      begin:function(){
+        $(".letter").removeClass("invisible");
+      }
     });
     })
     .catch(error => {

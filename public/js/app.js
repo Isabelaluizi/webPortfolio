@@ -2531,7 +2531,7 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/getMessage").then(function (response) {
       document.getElementById("introduction").innerHTML = response.data;
       var textWrapper = document.querySelector(".ml2");
-      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter invisible'>$&</span>");
       anime.timeline({
         loop: false
       }).add({
@@ -2543,6 +2543,9 @@ __webpack_require__.r(__webpack_exports__);
         duration: 950,
         delay: function delay(el, i) {
           return 1000 + 60 * i;
+        },
+        begin: function begin() {
+          $(".letter").removeClass("invisible");
         }
       });
     })["catch"](function (error) {
