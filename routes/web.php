@@ -17,4 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/sendEmail','MailController@sendEmail');
+Route::get('/getMessage', function() {
+    return response()->json("<span>Hi, my name is Isabela. I'm a Full Stack Web Developer living in Alberta, Canada.</span>");
+});
 

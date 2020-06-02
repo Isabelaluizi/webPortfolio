@@ -2524,22 +2524,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Body",
   mounted: function mounted() {
-    document.getElementById("introduction").innerHTML = "<strong><span>Hi, my name is Isabela. <br>  I'm a Full Stack Web Developer living in Alberta, Canada.</span></strong>";
-    var textWrapper = document.querySelector(".ml2");
-    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    anime.timeline().add({
-      targets: ".ml2 .letter",
-      scale: [3, 1],
-      opacity: [0, 1],
-      translateZ: 0,
-      easing: "easeOutExpo",
-      duration: 950,
-      delay: function delay(el, i) {
-        return 60 * i;
-      }
+    axios.get("/getMessage").then(function (response) {
+      document.getElementById("introduction").innerHTML = response.data;
+      var textWrapper = document.querySelector(".ml2");
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      anime.timeline({
+        loop: false
+      }).add({
+        targets: ".ml2 .letter",
+        scale: [3, 1],
+        opacity: [0, 1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: function delay(el, i) {
+          return 1000 + 60 * i;
+        }
+      });
+    })["catch"](function (error) {
+      console.log("Error getting message");
     });
   }
 });
@@ -7304,7 +7311,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.ml2[data-v-1e3a2f05] {\n  font-weight: 900;\n  font-size: 1.8em;\n}\n.ml2 .letter[data-v-1e3a2f05] {\n  display: inline-block;\n  line-height: 1em;\n}\n#main-image[data-v-1e3a2f05] {\n  opacity: 0.2;\n  max-height: 41.5vh;\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n}\n#introduction[data-v-1e3a2f05] {\n  position: absolute;\n  top: 15vh;\n  left: 5%;\n  right: 5%;\n  width: 90%;\n  font-family: \"Fredoka One\", cursive;\n}\n", ""]);
+exports.push([module.i, "\n.ml2[data-v-1e3a2f05] {\n  font-weight: 900;\n  font-size: 1.8em;\n}\n.ml2 .letter[data-v-1e3a2f05] {\n  display: inline-block;\n  line-height: 1em;\n  overflow: hidden;\n}\n#main-image[data-v-1e3a2f05] {\n  opacity: 0.2;\n  max-height: 41.5vh;\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n}\n#introduction[data-v-1e3a2f05] {\n  position: absolute;\n  top: 15vh;\n  left: 5%;\n  right: 5%;\n  width: 90%;\n  font-family: \"Fredoka One\", cursive;\n}\n\n", ""]);
 
 // exports
 
@@ -40023,7 +40030,7 @@ var render = function() {
       "div",
       {
         staticClass: "row justify-content-center justify-content-sm-center",
-        staticStyle: { "overflow-x": "hidden" }
+        staticStyle: { overflow: "hidden" }
       },
       [
         _vm._m(2),

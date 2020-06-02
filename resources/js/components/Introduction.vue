@@ -1,29 +1,35 @@
 <template>
-  <div id="about-me">
+<div id="about-me">
     <img src="images/R6gdLuNTTyu2zp5ZHNCrNw_thumb_861.jpg" id="main-image" class="img-fluid" />
     <h1 class="ml2" id="introduction"></h1>
-  </div>
+</div>
+
 </template>
 
 <script>
 export default {
   name: "Body",
   mounted() {
-    document.getElementById("introduction").innerHTML =
-      "<strong><span>Hi, my name is Isabela. <br>  I'm a Full Stack Web Developer living in Alberta, Canada.</span></strong>";
-    var textWrapper = document.querySelector(".ml2");
-    textWrapper.innerHTML = textWrapper.textContent.replace(
-      /\S/g,
+    axios.get("/getMessage")
+    .then(response => {
+            document.getElementById("introduction").innerHTML = response.data;
+            var textWrapper = document.querySelector(".ml2");
+            textWrapper.innerHTML = textWrapper.textContent.replace(
+            /\S/g,
       "<span class='letter'>$&</span>"
     );
-    anime.timeline().add({
+   anime.timeline({loop:false}).add({
       targets: ".ml2 .letter",
       scale: [3, 1],
       opacity: [0, 1],
       translateZ: 0,
       easing: "easeOutExpo",
       duration: 950,
-      delay: (el, i) => 60 * i
+      delay: (el, i) => 1000 + 60 * i
+    });
+    })
+    .catch(error => {
+      console.log("Error getting message");
     });
   }
 };
@@ -38,6 +44,7 @@ export default {
 .ml2 .letter {
   display: inline-block;
   line-height: 1em;
+  overflow: hidden;
 }
 #main-image {
   opacity: 0.2;
@@ -54,4 +61,5 @@ export default {
   width: 90%;
   font-family: "Fredoka One", cursive;
 }
+
 </style>

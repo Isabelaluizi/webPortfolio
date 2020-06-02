@@ -287,7 +287,7 @@
         </h5>
       </div>
     </div>
-    <div class="row justify-content-center justify-content-sm-center" style="overflow-x: hidden">
+    <div class="row justify-content-center justify-content-sm-center" style="overflow: hidden">
       <div class="col-12 col-sm-12 col-xl-10">
         <h2
           class="border-bottom text-center"
